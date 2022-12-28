@@ -1,18 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Component1NavBar } from './ui-components';
+import { ThemeProvider } from "@aws-amplify/ui-react";
+import { Amplify, API } from 'aws-amplify';
+import { Amplify, Analytics } from "aws-amplify";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import awsconfig from './aws-exports';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+Amplify.configure(awsconfig);
+
+import "@aws-amplify/ui-react/styles.css";
+import { studioTheme } from "./ui-components";
+import { 
+    Component1NavBar 
+  } from './ui-components';
+import {
+  SongCreateform
+} from ' ./ui-components';
+
+import { 
+  Component1Gallery 
+} from './ui-components';
+
+import { 
+  Component1RSVP 
+} from './ui-components';
+
+import { 
+  Component1Food 
+} from './ui-components';
+
+
+Amplify.configure(awsconfig);
+
+<ThemeProvider theme={studioTheme}>
+
+    <app />
+
+</ThemeProvider>
